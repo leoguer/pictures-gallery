@@ -30,7 +30,9 @@ function ImageView() {
         <div>
             <ul>
                 {listImage.map((item) => ( 
-                    <li>1{item.id}</li>
+                    <li key={item.id}>
+                       <img src={item.webformatURL} alt="image"/> 
+                    </li>
                 ))}
             </ul>
         </div>
