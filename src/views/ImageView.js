@@ -11,7 +11,7 @@ function Picture(props) {
 function ImageView(props) {
 
     useEffect(() => {
-        api.get('').then((res) => {
+        api(null).get('').then((res) => {
             console.log(res.data);
         }
         ).catch((err) => {

@@ -1,5 +1,5 @@
 import './css/App.css';
-import ImageView from './components/ImageView.js';
+import ImageView from './views/ImageView.js';
 
 function App() {
   return (

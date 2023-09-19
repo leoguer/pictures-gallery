@@ -1,5 +1,12 @@
 import axios from "axios";
 
-export default axios.create({
-    baseURL: "https://pixabay.com/api/?key=39538355-892af2772664da12ccae1d5c",
-});
+const apiKey = process.env.REACT_APP_API_KEY;
+const apiUrl = process.env.REACT_APP_API_URL;
+
+function getApiUrl(params) {
+    return axios.create({
+        baseURL: `${apiUrl}?key=${apiKey}`,
+    });
+}
+
+export default getApiUrl
