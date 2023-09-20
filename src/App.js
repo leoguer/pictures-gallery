@@ -1,11 +1,13 @@
-import './css/App.css';
 import ImageView from './views/ImageView.js';
+import Header from './views/HeaderView.js';
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">React App</h1>
-      <ImageView />
+      <Header />
+      <div className='container mx-auto'>
+        <ImageView />
+      </div>
     </div>
   );
 }

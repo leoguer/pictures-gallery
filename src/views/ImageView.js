@@ -27,11 +27,11 @@ function ImageView() {
 
 
     return (
-        <div>
-            <ul>
+        <div className="m-8">
+            <ul className="grid grid-cols-4 gap-4">
                 {listImage.map((item) => ( 
-                    <li key={item.id}>
-                       <img src={item.webformatURL} alt="image"/> 
+                    <li key={item.id} className="">
+                       <img src={item.webformatURL} alt="image" className="block h-full w-full rounded-lg object-cover object-center"/> 
                     </li>
                 ))}
             </ul>
