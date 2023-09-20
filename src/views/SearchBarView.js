@@ -13,6 +13,12 @@ export default function SearchBarView(props) {
     setLanguage(e)
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      onParamsChange()
+    }
+  }
+
   const onParamsChange = () => {
     const path = `&lang=${language=='GB'? 'EN': language}&q=${input.split(' ').join('+')}`;
     props.onParamsChange(path)
@@ -27,6 +33,7 @@ export default function SearchBarView(props) {
           placeholder={placeholderText[language]}
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
         <button
         onClick={onParamsChange} 
