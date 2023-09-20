@@ -1,12 +1,11 @@
 import axios from "axios";
+import { useEffect } from "react";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 const apiUrl = process.env.REACT_APP_API_URL;
 
-function getApiUrl(params) {
+export default function ApiConf() {
     return axios.create({
-        baseURL: `${apiUrl}?key=${apiKey}`,
+        baseURL: `${apiUrl}?key=${apiKey}&pretty=true&image_type=photo`,
     });
 }
-
-export default getApiUrl

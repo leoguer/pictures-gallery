@@ -3,8 +3,6 @@ import api from "../utils/api";
 import SearchBarView from "./SearchBarView";
 
 function Picture(props) {
-
-    console.log(props);
     
     return (<div>
         <img src={props.src} alt="image"/>
@@ -16,20 +14,24 @@ function ImageView() {
 
     const [listImage, setListImage] = useState([]);
 
+    const fetchdata = async (params = '') => {
+        const response = await api().get(params);
+        setListImage(response.data.hits);
+    }
+
+    const handleParamChange = (path) => {
+        fetchdata(path);
+    }
+
     useEffect(() => {
-        api(null).get('').then((res) => {
-            setListImage(res.data.hits);
-        }
-        ).catch((err) => {
-            console.log(err);
-        });
+        fetchdata();
     }, []);
 
 
 
     return (
         <div>
-            <SearchBarView />
+            <SearchBarView onParamsChange={handleParamChange} />
             <div className="m-8">
                 <ul className="grid grid-cols-4 gap-4">
                     {listImage.map((item) => ( 
