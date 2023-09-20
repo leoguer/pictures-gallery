@@ -1,5 +1,3 @@
-
-import userEvent from "@testing-library/user-event"
 import ListBox from "../components/ListBoxCountry"
 import { useState } from "react"
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
@@ -21,7 +19,7 @@ export default function SearchBarView(props) {
   }
 
   const onParamsChange = () => {
-    const path = `&lang=${language=='GB'? 'EN': language}&q=${input.split(' ').join('+')}`;
+    const path = `&lang=${language==='GB'? 'EN': language}&q=${input.split(' ').join('+')}`;
     props.onParamsChange(path, language)
   }
   

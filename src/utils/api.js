@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useEffect } from "react";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 const apiUrl = process.env.REACT_APP_API_URL;
