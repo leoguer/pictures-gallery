@@ -8,12 +8,17 @@ const choices = [
     {country : "France", code : "FR"}
   ]
 
-export default function ListBox() {
+export default function ListBox(props) {
   
   const [selected, setSelected] = useState(choices[0])
 
+  const onChangeSelected = (e) => {
+    props.onLanguage(e.code)
+    setSelected(e)
+  }
+
   return (
-      <Listbox value={selected} onChange={setSelected}>
+      <Listbox value={selected} onChange={onChangeSelected}>
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
             <span className="block truncate"><Flag country={selected.code}/></span>
