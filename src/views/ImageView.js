@@ -34,7 +34,7 @@ function ImageView() {
 
     return (
         <div>
-            <SearchBarView onParamsChange={handleParamChange} />
+            <SearchBarView onParamsChange={handleParamChange}/>
             <div className="m-8">
                 <ul className="grid grid-cols-4 gap-4">
                     {listImage.length > 0 ? listImage.map((item) => ( 
@@ -42,7 +42,7 @@ function ImageView() {
                         <img src={item.webformatURL} alt="image" className="block h-full w-full rounded-lg object-cover object-center"/> 
                         </li>
                     )) 
-                    : <div className="text-center">{noContentObject[language]}</div> 
+                    : <div className="absolute z-0 top-0 left-0 w-screen h-screen flex justify-center items-center text-black/30 font-bold text-5xl">{noContentObject[language]}</div> 
                 }
                 </ul>
             </div>

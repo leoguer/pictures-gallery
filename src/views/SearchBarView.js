@@ -26,7 +26,7 @@ export default function SearchBarView(props) {
   }
   
   return (
-    <nav className=" flex flex-row items-stretch sticky top-1 h-10 drop-shadow-xl border border-black/10 rounded-full ">
+    <nav className=" flex flex-row items-stretch sticky top-1 h-10 drop-shadow-xl border border-black/10 rounded-full z-10">
       <ListBox onLanguage={handleLanguage} />
         <input
           type="text"
