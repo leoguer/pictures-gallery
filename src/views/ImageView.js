@@ -10,7 +10,6 @@ function ImageView() {
 
     const fetchdata = async (params = '') => {
         const response = await api().get(params);
-        console.log(response.data.hits);
         setListImage(response.data.hits);
     }
 
